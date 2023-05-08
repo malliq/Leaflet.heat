@@ -24,6 +24,11 @@ L.HeatLayer = (L.Layer ? L.Layer : L.Class).extend({
         this._latlngs.push(latlng);
         return this.redraw();
     },
+    
+    addLatLngs: function (latlng) {
+        this._latlngs.push.apply(this._latlngs, latlng);
+        return this.redraw();
+    },
 
     setOptions: function (options) {
         L.setOptions(this, options);
